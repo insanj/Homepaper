@@ -2,17 +2,9 @@
 
 /***************************** Forward-Declarations *****************************/
 
-@interface PLUIImageViewController : UIViewController
-- (id)cropOverlay;
-@end
-
-@interface PLWallpaperImageViewController : PLUIImageViewController <UIActionSheetDelegate> {
+@interface PLWallpaperImageViewController : UIViewController <UIActionSheetDelegate> {
     UIActionSheet *_wallpaperOptionsSheet;
 }
-
-- (void)setImageAsHomeScreenClicked:(id)arg1;
-- (void)cropOverlayWasCancelled:(id)arg1;
-- (void)cropOverlayWasOKed:(id)arg1;
 @end
 
 @interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController
@@ -20,7 +12,7 @@
 
 /******************************* Custom Category ********************************/
 
-@interface PLWallpaperImageViewController (Homepaper) <UIAlertViewDelegate> 
+@interface PLStaticWallpaperImageViewController (Homepaper) <UIAlertViewDelegate> 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 @end
 
@@ -46,12 +38,12 @@
 
 %hook PLWallpaperImageViewController
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+%new - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     UIActionSheet *originalSheet = MSHookIvar<UIActionSheet *>(self, "_wallpaperOptionsSheet");
 
     if(buttonIndex != alertView.cancelButtonIndex){
         NSLog(@"[Homepaper] Setting Home Screen wallpaper (faking %@)...", originalSheet);
-        [self actionSheet:originalSheet clickedButtonAtIndex:originalSheet.firstOtherButtonIndex];
+        [self actionSheet:originalSheet clickedButtonAtIndex:originalSheet.firstOtherButtonIndex+1];
     }
 
     else{
