@@ -1,7 +1,9 @@
 Homepaper
 =======================
 
-Only let your Homescreen wallpaper change. Disable the "Set Lock Screen" option when changing your wallpaper in Settings. Made on request from [vortexie](http://twitter.com/vortexie_reddit).
+Only let your Homescreen wallpaper change. Replaces the set-wallpaper picker with a tiny pop-up that prevents messing with the Lock Screen. Made on request from [vortexie](http://twitter.com/vortexie_reddit).
+
+![1.0 Popup Screenie](https://f.cloud.github.com/assets/951011/2287414/ea5ad1e0-9fec-11e3-9e00-1aaab62f842e.PNG)
 
 ---------------------------------------
 	Simplified BSD License

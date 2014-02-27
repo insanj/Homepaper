@@ -5,7 +5,7 @@ Depends: mobilesubstrate
 Version: 1.0
 Architecture: iphoneos-arm
 Description: Only let your Homescreen wallpaper change.
- Disable the "Set Lock Screen" option when changing your wallpaper in Settings.
+ Replaces the set-wallpaper picker with a tiny pop-up that prevents messing with the Lock Screen.
 Maintainer: Julian Weiss <insanjmail@insanj.com>
 Author: Julian (insanj) Weiss
 Section: Tweaks
