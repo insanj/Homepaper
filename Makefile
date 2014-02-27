@@ -7,6 +7,7 @@ include theos/makefiles/common.mk
 TWEAK_NAME = Homepaper
 Homepaper_FILES = Homepaper.xm
 Homepaper_FRAMEWORKS = UIKit
+Homepaper_PRIVATE_FRAMEWORKS = Preferences PhotoLibrary
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
